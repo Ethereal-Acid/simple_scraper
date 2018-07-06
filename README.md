@@ -1,8 +1,7 @@
 # SimpleScraper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/simple_scraper`. To experiment with that code, run `bin/console` for an interactive prompt.
+A few useful methods to be used on strings. 
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +21,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+SimpleScraper.delocalize(string)
+```
+Returns string with all unicode localization characters replaced by standard letters. Features all characters you'll find by long-pressing a Mac keyboard, and retains capitalization.
+
+```ruby
+SimpleScraper.detag(string)
+```
+Removes attribute tags, and newline characters.
+
+```ruby
+SimpleScraper.clean(string)
+```
+Incorporates both delocalize, and detag methods.
 
 ## Development
 
@@ -32,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simple_scraper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[Ethereal-Acid]/simple_scraper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
