@@ -1,9 +1,13 @@
 # SimpleScraper
 
-A few useful methods to be used on strings. 
+All that remains of my first project.
+ 
 
 
 ## Installation
+```markdown
+Don't Install this. Don't follow these instructions. I'm going to polish this turd a bit more.
+```
 
 Add this line to your application's Gemfile:
 
@@ -21,35 +25,41 @@ Or install it yourself as:
 
 ## Usage
 
+###Class Methods
+Replace any accented characters in a given string with the unaccented variant, if that accent is produced on a long press on my keyboard.
 ```ruby
-SimpleScraper.delocalize(string)
+SimpleScraper.delocalize(String)
 ```
-Returns string with all unicode localization characters replaced by standard letters. Features all characters you'll find by long-pressing a Mac keyboard, and retains capitalization.
+Removes any enclosing tags or new lines from a given string using pattern  `<a|b|etc.>|</a|b|etc.>|\n` 
+```ruby
+SimpleScraper.detag(String)
+```
 
+Performs `SimpleScraper.delocalize.detag`
 ```ruby
-SimpleScraper.detag(string)
+SimpleScraper.clean(String)
 ```
-Removes attribute tags, and newline characters.
 
-```ruby
-SimpleScraper.clean(string)
-```
-Incorporates both delocalize, and detag methods.
+
+
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+I'm working on cleaning this project up. If it turns out to be useful to you, I'll include the option of enabling you to help develop it. 
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+######This is but a shell of its former self. RIP.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[Ethereal-Acid]/simple_scraper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Please do something better with your time
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+```ruby
+#TODO: Learn what this licensing ACTUALLY entails...
+```
 
 ## Code of Conduct
 
-Everyone interacting in the SimpleScraper project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/simple_scraper/blob/master/CODE_OF_CONDUCT.md).
+YOLO

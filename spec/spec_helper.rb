@@ -1,5 +1,6 @@
 require 'bundler/setup'
 require 'simple_scraper'
+require 'simple_scraper/page'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
