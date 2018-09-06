@@ -19,39 +19,39 @@ end
 
 RSpec.describe SimpleScraper::SimpleString do
   it 'cleans unicode localizations' do
-    expect(SimpleScraper::SimpleString.delocalize('Áśšhöłéš árė ęvērÿwhêrē')).to eq('Assholes are everywhere')
+    expect(SimpleScraper::SimpleString.unaccent('Áśšhöłéš árė ęvērÿwhêrē')).to eq('Assholes are everywhere')
   end
   
   it 'does nothing if there is nothing to be done' do
-    expect(SimpleScraper::SimpleString.delocalize('Assholes are everywhere')).to eq('Assholes are everywhere')
+    expect(SimpleScraper::SimpleString.unaccent('Assholes are everywhere')).to eq('Assholes are everywhere')
   end
   
   it 'cleans newline characters' do
-    expect(SimpleScraper::SimpleString.detag("String \nTheory")).to eq('String Theory')
+    expect(SimpleScraper::SimpleString.untag("String \nTheory")).to eq('String Theory')
   end
   
   it 'removes bold tags' do
-    expect(SimpleScraper::SimpleString.detag('<b>Buttsex is alright</b>')).to eq('Buttsex is alright')
+    expect(SimpleScraper::SimpleString.untag('<b>Buttsex is alright</b>')).to eq('Buttsex is alright')
   end
   
   it 'removes italics' do
-    expect(SimpleScraper::SimpleString.detag('<i>I see you</i>')).to eq('I see you')
+    expect(SimpleScraper::SimpleString.untag('<i>I see you</i>')).to eq('I see you')
   end
   
   it 'removes any tags consisting of a single word' do
-    expect(SimpleScraper::SimpleString.detag('<html>Hypertext Markup Language</html>')).to eq('Hypertext Markup Language')
+    expect(SimpleScraper::SimpleString.untag('<html>Hypertext Markup Language</html>')).to eq('Hypertext Markup Language')
   end
   
   it 'removes tags consisting of multiple words, including spaces' do
-    expect(SimpleScraper::SimpleString.detag("<div id=homosexual>I'm gay</div>"))
+    expect(SimpleScraper::SimpleString.untag("<div id=homosexual>I'm gay</div>"))
   end
   
   it 'removes nested tags 2 deep' do
-    expect(SimpleScraper::SimpleString.detag('<css><html>THIS IS TEST</html></css>')).to eq('THIS IS TEST')
+    expect(SimpleScraper::SimpleString.untag('<css><html>THIS IS TEST</html></css>')).to eq('THIS IS TEST')
   end
   
   it 'does nothing if there is nothing to be done' do
-    expect(SimpleScraper::SimpleString.detag('Stupid Monkey')).to eq('Stupid Monkey')
+    expect(SimpleScraper::SimpleString.untag('Stupid Monkey')).to eq('Stupid Monkey')
   end
   
   it 'supports nesting' do

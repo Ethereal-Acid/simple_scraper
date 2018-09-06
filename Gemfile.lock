@@ -75,9 +75,8 @@ DEPENDENCIES
   mechanize
   rake (~> 10.0)
   rspec (~> 3.0)
-  rspec-expectations
   rubocop
   simple_scraper!
 
 BUNDLED WITH
-   1.16.2
+   1.16.4
